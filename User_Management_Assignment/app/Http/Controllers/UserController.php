@@ -55,6 +55,8 @@ class UserController extends Controller
             'city' => 'required|max:100',
             'state' => 'required|max:100',
             'pincode' => 'required|digits:6',
+            'status' => 'required',
+
         ]);
 
         $user = User::create([
@@ -62,6 +64,7 @@ class UserController extends Controller
             'email' => $validated['email'],
             'user_id' => $validated['user_id'],
             'mobile_no' => $validated['mobile_no'],
+            'status' =>$validated['status'],
             'password' => Hash::make($validated['password']),
         ]);
 

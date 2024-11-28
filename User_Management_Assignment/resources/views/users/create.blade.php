@@ -83,6 +83,18 @@
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
             @enderror
         </div>
+        <div>
+            <label for="status" class="block text-sm font-medium">Status</label>
+            <select name="status" id="status"
+            class="w-full mt-1 p-2 border rounded bg-gray-700 text-gray-100 focus:ring focus:ring-blue-500" >
+            <option value=""selected disabled>Select Status</option>
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+            </select>
+            @error('status')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+            @enderror
+        </div>
         {{-- <button class="p-2 bg-gray-600 rounded text-white font-semibold" disabled>Login </button> --}}
 
         <button type="submit" class="w-full p-2 bg-blue-500 rounded text-white font-semibold hover:bg-blue-600">

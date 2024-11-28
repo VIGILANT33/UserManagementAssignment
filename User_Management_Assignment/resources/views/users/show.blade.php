@@ -37,6 +37,15 @@
                 <span class="text-white font-medium">Pincode:</span>
                 <span class="text-gray-400 font-semibold">{{ $user->userProfile->pincode }}</span>
             </div>
+            <div class="flex justify-between">
+                <span class="text-white font-medium">Status:</span>
+                <span class="text-gray-400 font-semibold">
+                    @if($user->status)
+                        Active
+                    @else
+                        Inactive
+                    @endif</span>
+            </div>
         </div>
         <form action="{{ route('logout') }}" method="POST">
             @csrf
