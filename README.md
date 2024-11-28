@@ -29,7 +29,8 @@ FRAMEWORK - ANY AS PER YOUR CHOICE
 
 CONDITIONS:  PROPER VALIDATION TO BE IMPLEMENTED 
                           FOR EACH FAIL/ SUCCESS SCENARIO API MUST RETURN THE PROPER REASON
-
+=======================================================================================================================
+Overview of the Project:
 
 I have created User Management with two tables User and UserProfile
 Used Tailwind designs to make the form and styles
