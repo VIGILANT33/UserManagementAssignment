@@ -17,7 +17,7 @@ class UserController extends Controller
      * Create User
      * Show Profile of User and UserProfile tables using Inner Join
      * 
-     *  */ 
+     *  */
     public function login()
     {
         return view('users.index');
@@ -40,15 +40,15 @@ class UserController extends Controller
      * Validate User Credentials with Email and Password (Commented method. Actual Scenario)
      * Logout method invalidating credentials
      * 
-     *  */ 
+     *  */
 
     public function registerUser(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|email|unique:users,email',// Checks if the Email entered is already taken or not
+            'email' => 'required|email|unique:users,email', // Checks if the Email entered is already taken or not
             'user_id' => 'required|unique:users,user_id', // Checks if the User Id entered is already taken or not
-            'mobile_no' => 'required|digits:10|unique:users,mobile_no',// Checks if the Mobile No entered is already taken or not
+            'mobile_no' => 'required|digits:10|unique:users,mobile_no', // Checks if the Mobile No entered is already taken or not
             'password' => 'required|min:8',
             'address_1' => 'required|max:255',
             'address_2' => 'nullable|max:255',
@@ -64,7 +64,7 @@ class UserController extends Controller
             'email' => $validated['email'],
             'user_id' => $validated['user_id'],
             'mobile_no' => $validated['mobile_no'],
-            'status' =>$validated['status'],
+            'status' => $validated['status'],
             'password' => Hash::make($validated['password']),
         ]);
 
@@ -78,7 +78,6 @@ class UserController extends Controller
         ]);
 
         Auth::login($user);
-
         return redirect()->route('profile')->with('success', 'Account Created');
     }
 
@@ -111,7 +110,6 @@ class UserController extends Controller
     //     Auth::login($user);
     //     return redirect()->route('profile')->with('success', 'Login Successful');
     // }
-
 
     public function logout(Request $request)
     {

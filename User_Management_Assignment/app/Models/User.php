@@ -14,7 +14,7 @@ class User extends Authenticatable
     protected $primaryKey = 'user_id';
     protected $keyType = 'string';
     public $incrementing = false;
-    
+
     //Fillables defined to fill mass data of user if needed to only mentioned fields
     protected $fillable = [
         'user_id',
@@ -33,6 +33,6 @@ class User extends Authenticatable
     public function userProfile()
     {
         // Defining  the one-one relationship between Users and UserProfiles tables
-        return $this->hasOne(UserProfile::class, 'user_id', 'user_id'); 
+        return $this->hasOne(UserProfile::class, 'user_id', 'user_id');
     }
 }

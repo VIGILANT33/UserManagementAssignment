@@ -1,7 +1,6 @@
 <x-layout>
     <div class="max-w-lg mx-auto bg-gray rounded-lg shadow-lg p-6">
         <h1 class="text-3xl font-bold mb-4 text-gray-900 text-center">User Profile</h1>
-
         <div class="border-t border-gray-300 mt-4 pt-4 space-y-4">
             <div class="flex justify-between">
                 <span class="text-white font-medium">Name:</span>
@@ -40,11 +39,12 @@
             <div class="flex justify-between">
                 <span class="text-white font-medium">Status:</span>
                 <span class="text-gray-400 font-semibold">
-                    @if($user->status)
+                    @if ($user->status)
                         Active
                     @else
                         Inactive
-                    @endif</span>
+                    @endif
+                </span>
             </div>
         </div>
         <form action="{{ route('logout') }}" method="POST">
