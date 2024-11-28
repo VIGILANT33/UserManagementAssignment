@@ -46,3 +46,9 @@ Login page has validations and also checks for the correct credentials.
 
 I have used Laravel ui packages for authentication and validations.
 
+*Please run these codes
+
+npm install
+npm run dev
+
+*for proper design with Vite
